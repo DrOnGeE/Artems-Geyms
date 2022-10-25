@@ -1,6 +1,6 @@
 
 ## Artyom's Adventure
----
+
 IMG - images - изображения
 
 OBJ - objects - объекты
