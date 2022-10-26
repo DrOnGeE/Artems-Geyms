@@ -10,9 +10,17 @@ func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("player_right"):
 		velocity.x += speed
+		$AnimatedSprite.play("walk")
+		$AnimatedSprite.flip_h = false
 	if Input.is_action_pressed("player_left"):
 		velocity.x -= speed
-
+		$AnimatedSprite.play("walk")
+		$AnimatedSprite.flip_h = true
+	if Input.is_action_pressed("hand_activate"):
+		shoot()
+	if velocity.x == 0:
+		$AnimatedSprite.play("staying")
+		
 func _physics_process(delta):
 	get_input()
 	velocity.y += gravity * delta
@@ -20,3 +28,14 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("player_jump"):
 		if is_on_floor():
 			velocity.y = jump_speed
+
+const bulletPath = preload('res://OBJ/HAND.tscn')
+
+func shoot():
+	var bullet = bulletPath.instance()
+	
+	get_parent().add_child(bullet)
+	
+	bullet.position = get_global_mouse_position() 
+	
+	bullet.velocity = get_global_mouse_position() - bullet.position
