@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://TLE/TILESET_BASIC_SET.tres" type="TileSet" id=1]
 [ext_resource path="res://OBJ/PLAYER.tscn" type="PackedScene" id=2]
-[ext_resource path="res://OBJ/HAND.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,6 +12,3 @@ tile_data = PoolIntArray( -131072, 3, 0, -131071, 4, 0, -65536, 12, 0, -65535, 1
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 640, 354 )
-
-[node name="KinematicBody2D2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 724, 349 )

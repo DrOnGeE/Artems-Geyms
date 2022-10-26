@@ -35,7 +35,8 @@ func shoot():
 	var bullet = bulletPath.instance()
 	
 	get_parent().add_child(bullet)
-	
-	bullet.position = get_global_mouse_position() 
+	bullet.position = self.position
 	
 	bullet.velocity = get_global_mouse_position() - bullet.position
+	
+	

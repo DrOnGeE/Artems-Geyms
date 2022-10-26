@@ -5,7 +5,7 @@ export (int) var speed = 3000
 var velocity = Vector2()
 
 func _ready():
-	self.hide()
+	self.show()
 
 func _process(delta):
 	velocity = Vector2()
@@ -15,7 +15,7 @@ func _process(delta):
 		velocity = Vector2(speed, 0).rotated(rotation)
 
 func _unhandled_input(event):
-	self.hide()
+	self.show()
 
 func _physics_process(delta):
 	velocity = move_and_slide(velocity)
