@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://buttons/MenuButton.gd" type="Script" id=1]
+[ext_resource path="res://buttons/Artems_hand_fixed.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Vogue.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+extra_spacing_top = 17
+font_data = ExtResource( 3 )
+
+[node name="TextureButton" type="TextureButton"]
+margin_top = 130.0
+margin_right = 1024.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 0, 40 )
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 20.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Text Button[/center]"
+text = "Text Button"
+
+[node name="LeftArrow" type="Sprite" parent="."]
+position = Vector2( 246.969, 40.0313 )
+scale = Vector2( 0.289034, 0.289034 )
+texture = ExtResource( 2 )
+
+[node name="RightArrow" type="Sprite" parent="."]
+position = Vector2( 701.018, 62 )
+scale = Vector2( 0.288809, 0.288809 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[connection signal="focus_entered" from="." to="." method="_on_TextureButton_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_TextureButton_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_TextureButton_mouse_entered"]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://buttons/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://759140146a68424462e6fdee03cda5f6.jpg" type="Texture" id=3]
+[ext_resource path="res://fonts/Vogue.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 4 )
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512.167, 302.625 )
+scale = Vector2( 1.81501, 1.42494 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 296.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "FUCK"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 300.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 300 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Start" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 56.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 0, 60 )
+focus_neighbour_top = NodePath("../Exit")
+focus_neighbour_bottom = NodePath("../Options")
+focus_mode = 1
+text = "Start"
+arrow_margin_from_center = 135
+
+[node name="Options" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 120.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 60 )
+focus_neighbour_top = NodePath("../Start")
+focus_neighbour_bottom = NodePath("../Exit")
+focus_mode = 1
+text = "Options"
+arrow_margin_from_center = 155
+
+[node name="Exit" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 184.0
+margin_bottom = 244.0
+rect_min_size = Vector2( 0, 60 )
+focus_neighbour_top = NodePath("../Options")
+focus_neighbour_bottom = NodePath("../Start")
+focus_mode = 1
+text = "Exit"
+arrow_margin_from_center = 125
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
