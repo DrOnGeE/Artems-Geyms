@@ -16,8 +16,8 @@ func get_input():
 		velocity.x -= speed
 		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = true
-	if Input.is_action_pressed("hand_activate"):
-		shoot()
+	#if Input.is_action_pressed("hand_activate"):
+		#shoot()
 	if velocity.x == 0:
 		$AnimatedSprite.play("staying")
 		
@@ -29,14 +29,11 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_speed
 
-const bulletPath = preload('res://OBJ/HAND.tscn')
-
-func shoot():
-	var bullet = bulletPath.instance()
-	
-	get_parent().add_child(bullet)
-	bullet.position = self.position
-	
-	bullet.velocity = get_global_mouse_position() - bullet.position
-	
-	
+#const bulletPath = preload('res://OBJ/HAND.tscn')
+#func shoot():
+#	var bullet = bulletPath.instance()
+#	
+#	get_parent().add_child(bullet)
+#	bullet.position = self.position
+#	
+#	bullet.velocity = get_global_mouse_position() - bullet.position
