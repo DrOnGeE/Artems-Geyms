@@ -37,8 +37,13 @@ func _physics_process(delta):
 
 
 func _on_Area2D_mouse_entered():
-	print("got it")
-
+	#print("got it")
+	pass
 
 func _on_Area2D_mouse_exited():
-	print("well")
+	#print("well")
+	pass
+
+func _on_AreaLimit_area_exited(area):
+	print("catch")
+	pass
