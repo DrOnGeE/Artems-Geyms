@@ -43,7 +43,3 @@ func _on_Area2D_mouse_entered():
 func _on_Area2D_mouse_exited():
 	#print("well")
 	pass
-
-func _on_AreaLimit_area_exited(area):
-	print("catch")
-	pass
