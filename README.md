@@ -1,5 +1,5 @@
 
-## Artyom's Adventure
+## Artem's Adventure
 
 IMG - images - изображения
 
