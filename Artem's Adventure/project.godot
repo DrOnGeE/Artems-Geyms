@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Artem's Adventure"
-run/main_scene="res://SCN/BASICS_DEMO_LEVEL.tscn"
+run/main_scene="res://SCN/demo-level/BASICS_DEMO_LEVEL.tscn"
 
 [display]
 
