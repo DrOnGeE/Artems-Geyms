@@ -66,7 +66,7 @@ func ControlLoop():
 		pass
 	if Input.is_action_just_released("hand_activate"):
 		#position = pre_position
-		#can_fire = true
+		can_fire = true
 		#print("released")
 		pass
 	pass
