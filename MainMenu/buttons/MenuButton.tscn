@@ -14,6 +14,7 @@ margin_top = 130.0
 margin_right = 1024.0
 margin_bottom = 170.0
 rect_min_size = Vector2( 0, 40 )
+focus_mode = 1
 script = ExtResource( 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -23,16 +24,16 @@ margin_bottom = 20.0
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Text Button[/center]"
-text = "Text Button"
+bbcode_text = "[center] Text button [/center]"
+text = " Text button "
 
 [node name="LeftArrow" type="Sprite" parent="."]
-position = Vector2( 246.969, 40.0313 )
+position = Vector2( 412, 30.7692 )
 scale = Vector2( 0.289034, 0.289034 )
 texture = ExtResource( 2 )
 
 [node name="RightArrow" type="Sprite" parent="."]
-position = Vector2( 701.018, 62 )
+position = Vector2( 612, 30.7692 )
 scale = Vector2( 0.288809, 0.288809 )
 texture = ExtResource( 2 )
 flip_h = true

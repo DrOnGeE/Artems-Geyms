@@ -1,4 +1,4 @@
-extends Node2D
+extends Popup
 
 # Video Settings
 onready var display_options = $SettingsTab/Video/MarginContainer/VideoSettings/OptionButton

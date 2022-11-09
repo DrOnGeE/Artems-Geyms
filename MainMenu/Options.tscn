@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Options.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 900.0
+margin_bottom = 500.0
+color = Color( 0.415686, 0.415686, 0.415686, 1 )
+
+[node name="SettingsTab" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 900.0
+margin_bottom = 500.0
+tab_align = 0
+
+[node name="Video" type="Tabs" parent="SettingsTab"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = 4.0
+margin_bottom = -4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsTab/Video"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 6.0
+
+[node name="VideoSettings" type="GridContainer" parent="SettingsTab/Video/MarginContainer"]
+margin_right = 800.0
+margin_bottom = 370.0
+
+[node name="ScreenMode" type="Label" parent="SettingsTab/Video/MarginContainer/VideoSettings"]
+margin_right = 87.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+text = "Display Mode"
+
+[node name="OptionButton" type="OptionButton" parent="SettingsTab/Video/MarginContainer/VideoSettings/ScreenMode"]
+margin_left = 676.0
+margin_right = 29.0
+margin_bottom = 44.0
+size_flags_horizontal = 10
+text = "Windowed"
+
+[connection signal="item_selected" from="SettingsTab/Video/MarginContainer/VideoSettings/ScreenMode/OptionButton" to="." method="_on_OptionButton_item_selected"]

@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var settings_menu = $SettingsMenu
+onready var settings_menu = $Node2D
 
 func _ready():
 	$VBoxContainer/VBoxContainer/Start.grab_focus()

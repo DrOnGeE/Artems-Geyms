@@ -46,7 +46,6 @@ margin_bottom = 116.0
 rect_min_size = Vector2( 0, 60 )
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../Options")
-focus_mode = 1
 text = "Start"
 arrow_margin_from_center = 135
 
@@ -56,7 +55,6 @@ margin_bottom = 180.0
 rect_min_size = Vector2( 0, 60 )
 focus_neighbour_top = NodePath("../Start")
 focus_neighbour_bottom = NodePath("../Exit")
-focus_mode = 1
 text = "Options"
 arrow_margin_from_center = 155
 
@@ -66,7 +64,6 @@ margin_bottom = 244.0
 rect_min_size = Vector2( 0, 60 )
 focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../Start")
-focus_mode = 1
 text = "Exit"
 arrow_margin_from_center = 125
 

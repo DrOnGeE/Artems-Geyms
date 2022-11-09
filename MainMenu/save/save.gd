@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 const SAVEFILE = "user://SAVEFILE.save"
 
@@ -10,12 +10,7 @@ func _ready():
 func load_data():
 	var file = File.new()
 	if not file.file_exists(SAVEFILE):
-		game_data = {
-			"fullscreen_on": false,
-			"brightness": 1,
-			"master_vol": -10,
-			"music_vol": -10,
-			}
+		game_data = {"fullscreen_on": false}
 		save_data()
 	file.open(SAVEFILE, File.READ)
 	game_data = file.get_var()
