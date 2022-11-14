@@ -26,3 +26,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("player_jump"):
 		if is_on_floor():
 			velocity.y = jump_speed
+
+
+func _on_HandLimits_area_exited(area):
+	pass # Replace with function body.

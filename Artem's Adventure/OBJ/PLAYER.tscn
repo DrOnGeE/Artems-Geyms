@@ -43,7 +43,7 @@ animation = "staying"
 position = Vector2( 1, -2.0625 )
 shape = SubResource( 3 )
 
-[node name="Hand" parent="." instance=ExtResource( 6 )]
+[node name="HAND" parent="." instance=ExtResource( 6 )]
 
 [node name="HandLimits" type="Area2D" parent="."]
 collision_layer = 0
@@ -80,5 +80,5 @@ shape = SubResource( 5 )
 position = Vector2( 0, -312 )
 shape = SubResource( 5 )
 
-[connection signal="area_entered" from="HandLimits" to="Hand" method="_on_HandLimits_area_entered"]
-[connection signal="area_exited" from="HandLimits" to="Hand" method="_on_HandLimits_area_exited"]
+[connection signal="area_entered" from="HandLimits" to="HAND" method="_on_HandLimits_area_entered"]
+[connection signal="area_exited" from="HandLimits" to="HAND" method="_on_HandLimits_area_exited"]

@@ -22,8 +22,10 @@ Music="*res://src/music/music.tscn"
 
 [display]
 
+window/size/width=1270
+window/size/height=720
 window/stretch/mode="viewport"
-window/stretch/aspect="keep"
+window/stretch/aspect="expand"
 
 [gui]
 
