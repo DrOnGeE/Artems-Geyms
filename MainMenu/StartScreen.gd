@@ -13,4 +13,6 @@ func _on_Exit_pressed():
 	#get_tree().change_scene("res://options_newGame.tscn")
 	
 func _on_Options_pressed():
-	$settings_menu.popup_centered()
+	#$settings_menu.popup_centered()
+	$settings_menu.show()
+	pass

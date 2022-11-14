@@ -41,12 +41,14 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="obj_detected"]
 position = Vector2( 23, -10.5 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 self_modulate = Color( 0.568627, 0, 0, 1 )
 shape = SubResource( 4 )
+disabled = true
 
 [node name="gun" type="Sprite" parent="."]
 position = Vector2( 34, 2 )

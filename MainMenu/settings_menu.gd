@@ -1,4 +1,4 @@
-extends Popup
+extends Control
 
 # Video Settings
 onready var display_options = $SettingsTab/Video/MarginContainer/VideoSettings/OptionButton
@@ -9,6 +9,7 @@ onready var master_slider = $SettingsTab/Audio/MarginContainer2/AudioSettings/Ma
 onready var music_slider = $SettingsTab/Audio/MarginContainer2/AudioSettings/MusicSlider
 
 func _ready():
+	self.hide()
 	
 	display_options.select(1 if NewScript.game_data.fullscreen_on else 0)
 	GlobalSettings.toggle_fullscreen(NewScript.game_data.fullscreen_on)
@@ -32,3 +33,8 @@ func _on_MasterSlider_value_changed(value):
 
 func _on_MusicSlider_value_changed(value):
 	GlobalSettings.update_music_vol(value)
+
+
+func _on_ButtonClose_pressed():
+	self.hide()
+	pass # Replace with function body.
