@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 export (int) var speed = 800
 export (int) var jump_speed = -1800
@@ -27,6 +28,10 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_speed
 
-
+func player_die():
+#	SoundPlayer.play_sound(SoundPlayer.HURT)
+	queue_free()
+#	Events.emit_signal("player_died")
+	
 func _on_HandLimits_area_exited(area):
 	pass # Replace with function body.
