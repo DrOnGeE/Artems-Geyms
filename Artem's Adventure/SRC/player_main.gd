@@ -28,13 +28,9 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_speed
 
-<<<<<<< HEAD
+
 func player_die():
 #	SoundPlayer.play_sound(SoundPlayer.HURT)
 	queue_free()
 #	Events.emit_signal("player_died")
 	
-=======
->>>>>>> origin/porn
-func _on_HandLimits_area_exited(area):
-	pass # Replace with function body.
