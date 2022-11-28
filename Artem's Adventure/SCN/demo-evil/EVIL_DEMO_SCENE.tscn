@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://TLE/TILESET_BASIC_SET.tres" type="TileSet" id=1]
+[ext_resource path="res://OBJ/NewEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://OBJ/EnemyMorshy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://OBJ/PLAYER.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="EnemyMorshy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 430, 144 )
+
+[node name="EnemyMorshy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 529, -395 )
+
+[node name="EnemyMorshy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 955, -647 )
+
+[node name="EnemyMorshy4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 461, -980 )
+
+[node name="EnemyMorshy5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 884, -1328 )
+
+[node name="EnemyMorshy6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 647, -1813 )
+
+[node name="EnemyMorshy7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 947, -2376 )
+
+[node name="EnemyMorshy8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 576, -2868 )
+
+[node name="NewEnemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1829, -30 )
+
+[node name="NewEnemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1358, 97 )
+
+[node name="NewEnemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2304, -157 )
+
+[node name="PLAYER" parent="." instance=ExtResource( 4 )]
+position = Vector2( 667, 328 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -196570, 0, 0, -196569, 0, 0, -196568, 0, 0, -196567, 0, 0, -196566, 0, 0, -196565, 0, 0, -196564, 0, 0, -196563, 0, 0, -196562, 0, 0, -196561, 0, 0, -131034, 0, 0, -65505, 0, 0, -65504, 0, 0, -65503, 0, 0, -65502, 0, 0, -65501, 0, 0, -65500, 0, 0, -65499, 0, 0, -65498, 0, 0, 31, 0, 0, 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 196604, 0, 0, 131096, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 262144, 0, 0, 262163, 0, 0, 327680, 0, 0, 327699, 0, 0, 393216, 0, 0, 393235, 0, 0, 458752, 0, 0, 458762, 0, 0, 458771, 0, 0, 524288, 0, 0, 524298, 0, 0, 524307, 0, 0, 589824, 0, 0, 589834, 0, 0, 589843, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0 )
