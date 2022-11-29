@@ -20,7 +20,7 @@ func _physics_process(delta):
 		direction *= -1
 	
 	sprite.flip_h = direction.x > 0
-	
+	$AnimatedSprite.play("default")
 	velocity.x = 0
 	velocity.x += speed * direction.x
 	velocity.y += gravity * delta

@@ -6,7 +6,7 @@ var bullet = preload("res://OBJ/BULLET.tscn")
 var timer = Timer.new()
 
 func _ready():
-	timer.wait_time = 0.8
+	timer.wait_time = 0.1
 	timer.autostart = true
 	add_child(timer)
 

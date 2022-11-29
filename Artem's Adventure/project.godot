@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Artem's Adventure"
-run/main_scene="res://SCN/demo-hand-manipulation/HAND_MANIPULATION_DEMO.tscn"
+run/main_scene="res://SCN/demo-evil/EVIL_DEMO_SCENE.tscn"
 
 [display]
 
