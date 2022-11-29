@@ -17,13 +17,13 @@ var rate_of_fire = 0.4
 
 func _ready():
 	self.hide()
-	#self.show()
+	self.show()
 	pre_position = position
 	pass
 	
 func _unhandled_input(event):
-	self.hide()
-	#self.show()
+	#self.hide()
+	self.show()
 	pass
 
 func _process(delta):
@@ -48,7 +48,7 @@ func ControlLoop():
 		look_at(direction)
 		can_move = true
 		can_fire = false
-		position = get_parent().get_node("custom_player").position
+		#position = get_parent().get_node("custom_player").position
 		pass
 		
 	if Input.is_action_pressed("hand_activate"):

@@ -25,25 +25,28 @@ func _physics_process(delta):
 		var tile = tilemap.world_to_map(global_position + Vector2(16,32))
 		check_wall(tile)
 	else:
-		var tile = tilemap.world_to_map(global_position + Vector2(16,32))
+		var tile = tilemap.world_to_map(global_position + Vector2(-16,32))
 		check_wall(tile)
 	
 	
 	move_and_slide(move, Vector2.UP)
 
 func check_wall(tile):
-	var tile_info = tilemap.get_cellv(tile)
-	if tile_info == -1:
+	#var tile_info = tilemap.get_cellv(tile)
+	if is_on_wall():
 		dir_changed()
+	pass
 
 
 
 func _on_obj_detected_body_entered(body):
-	dir_changed()
+	#dir_changed()
+	pass
 
 
 func _on_hurtbox_area_entered(area):
-		if area.is_in_group("BULLET"):
-			hitpoints -= 1
-			if hitpoints == 0:
-				queue_free()
+	#	if area.is_in_group("BULLET"):
+	#		hitpoints -= 1
+	#		if hitpoints == 0:
+	#			queue_free()
+	pass
