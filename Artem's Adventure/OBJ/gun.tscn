@@ -12,4 +12,9 @@ position = Vector2( -263, -148 )
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="TurnAxis" type="Position2D" parent="."]
+
+[node name="BulletPoint" type="Position2D" parent="TurnAxis"]
+position = Vector2( 100, 0 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
