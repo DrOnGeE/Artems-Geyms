@@ -10,27 +10,6 @@
 [node name="EnemyMorshy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 430, 144 )
 
-[node name="EnemyMorshy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 529, -395 )
-
-[node name="EnemyMorshy3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 955, -647 )
-
-[node name="EnemyMorshy4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 461, -980 )
-
-[node name="EnemyMorshy5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 884, -1328 )
-
-[node name="EnemyMorshy6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 647, -1813 )
-
-[node name="EnemyMorshy7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 947, -2376 )
-
-[node name="EnemyMorshy8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 576, -2868 )
-
 [node name="NewEnemy2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1829, -30 )
 

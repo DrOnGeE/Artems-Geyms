@@ -4,12 +4,13 @@ onready var player = get_tree().current_scene.get_node('PLAYER')
 var can_fire = true
 var rate_of_fire = 0.4
 var bullet = preload("res://OBJ/BULLET.tscn")
-var timer = Timer.new()
+#var timer = Timer.new()
 
 func _ready():
-	timer.wait_time = 0.1
-	timer.autostart = true
-	add_child(timer)
+	#timer.wait_time = 0.1
+	#timer.autostart = true
+	#add_child(timer)
+	pass
 
 func _physics_process(delta):
 	flip_v = true if player.global_position.x < global_position.x else false
