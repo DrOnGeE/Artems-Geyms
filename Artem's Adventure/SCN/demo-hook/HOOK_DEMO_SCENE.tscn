@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://TLE/TILESET_BASIC_SET.tres" type="TileSet" id=1]
 [ext_resource path="res://SCN/demo-hook/player_with_hook.tscn" type="PackedScene" id=2]
+[ext_resource path="res://OBJ/EnemyMorshy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://OBJ/Turett.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,3 +14,9 @@ tile_data = PoolIntArray( -1114113, 0, 0, -1179648, 0, 0, -1179647, 0, 0, -11796
 
 [node name="PLAYER" parent="." instance=ExtResource( 2 )]
 position = Vector2( 644, -25 )
+
+[node name="EnemyMorshy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1346, 53 )
+
+[node name="Turett" parent="." instance=ExtResource( 4 )]
+position = Vector2( 763, 642 )
