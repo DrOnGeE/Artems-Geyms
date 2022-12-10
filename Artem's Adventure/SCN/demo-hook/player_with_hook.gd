@@ -18,16 +18,20 @@ var can_jump = false			# Whether the player used their air-jump
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if Input.is_action_pressed("hand_activate"):
-			# We clicked the mouse -> shoot()
-			$Chain.shoot(event.position - get_viewport().size * 0.5)
-		else:
-			# We released the mouse -> release()
-			$Chain.release()
+		if (event.button_index == BUTTON_LEFT):
+			if Input.is_action_pressed("hand_activate"):
+				# We clicked the mouse -> shoot()
+				$Chain.shoot(event.position - get_viewport().size * 0.5)
+				pass
+			if Input.is_action_just_released("hand_activate"):
+				# We released the mouse -> release()
+				$Chain.release()
+				pass
 
 # This function is called every physics frame
 func _physics_process(_delta: float) -> void:
 	# Walking
+	
 	var walk = (Input.get_action_strength("player_right") - Input.get_action_strength("player_left")) * MOVE_SPEED
 
 	# Falling

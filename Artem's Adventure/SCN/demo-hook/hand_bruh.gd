@@ -33,41 +33,48 @@ func _process(delta):
 	
 
 func _physics_process(delta):
-	#velocity = move_and_slide(velocity)
 	if (can_move == true):
 		Move()
+	pass
+
+func _input(event: InputEvent):
+	if event is InputEventMouseButton:
+		if (event.button_index == BUTTON_LEFT):
+			if Input.is_action_just_released("hand_activate"):
+				can_fire = true
+				pass
+			if Input.is_action_pressed("hand_activate"):
+				self.visible = false
+				can_fire = false
+				pass
+			pass
+		if (event.button_index == BUTTON_RIGHT):
+			if Input.is_action_pressed("hand_shoot") and can_fire == true:
+				Fire()
+				pass
+			pass
+		pass
 	pass
 
 func ControlLoop():
 	if (can_move == false):
 		look_at(get_global_mouse_position())
 		
-	if Input.is_action_just_pressed("hand_activate"):
-		#pre_position = position
-		#direction = get_global_mouse_position()
-		#look_at(direction)
-		#can_move = true
-		#can_fire = false
-		#position = get_parent().get_node("custom_player").position
-		pass
-		
-	if Input.is_action_pressed("hand_activate"):
-		self.visible = false
-		pass
-
+#	if Input.is_action_just_pressed("hand_activate"):
+#
+#		pass
+#
+#	if Input.is_action_pressed("hand_activate"):
+#		self.visible = false
+#		can_fire = false
+#		pass
 
 #FIRE
-	if Input.is_action_pressed("hand_shoot") and can_fire == true:
-		#can_fire = false
-		#HandVision()
+	if not Input.is_action_pressed("hand_activate") and Input.is_action_pressed("hand_shoot") and can_fire == true:
 		Fire()
-		#yield(get_tree().create_timer(rate_of_fire), "timeout")
-		#can_fire = true
 		pass
 	if Input.is_action_just_released("hand_activate"):
-		#position = pre_position
 		can_fire = true
-		#print("released")
 		pass
 	pass
 
