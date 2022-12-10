@@ -8,7 +8,7 @@ const MOVE_SPEED = 800			# Speed to walk with
 const GRAVITY = 60				# Gravity applied every second
 const MAX_SPEED = 2000			# Maximum speed the player is allowed to move
 const FRICTION_AIR = 0.95		# The friction while airborne
-const FRICTION_GROUND = 1.05 #0.85 # The friction while on the ground
+const FRICTION_GROUND = 0.98 # The friction while on the ground
 const CHAIN_PULL = 105
 
 var velocity = Vector2(0,0)		# The velocity of the player (kept over time)
