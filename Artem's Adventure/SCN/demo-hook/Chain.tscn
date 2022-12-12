@@ -4,9 +4,8 @@
 [ext_resource path="res://SCN/demo-hook/assets/link.png" type="Texture" id=2]
 [ext_resource path="res://SCN/demo-hook/Chain.gd" type="Script" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 4.61143
-height = 8.80657
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 16.1496 )
 
 [node name="Chain" type="Node2D"]
 script = ExtResource( 3 )
@@ -29,5 +28,5 @@ texture = ExtResource( 1 )
 offset = Vector2( 0, 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
-position = Vector2( 0, 15.7008 )
+position = Vector2( 1, 17 )
 shape = SubResource( 1 )

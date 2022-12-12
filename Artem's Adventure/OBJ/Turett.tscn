@@ -9,7 +9,7 @@ extents = Vector2( 50, 36 )
 
 [node name="Turett" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 3
 script = ExtResource( 1 )
 detect_radius = 250
 fire_rate = 0.2
@@ -20,6 +20,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+disabled = true
 
 [node name="Visibility" type="Area2D" parent="."]
 
