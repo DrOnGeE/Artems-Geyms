@@ -23,7 +23,7 @@ func _ready():
 	
 func _unhandled_input(event):
 	#self.hide()
-	self.show()
+	#self.show()
 	pass
 
 func _process(delta):
@@ -42,9 +42,10 @@ func _input(event: InputEvent):
 		if (event.button_index == BUTTON_LEFT):
 			if Input.is_action_just_released("hand_activate"):
 				can_fire = true
+				self.show()
 				pass
 			if Input.is_action_pressed("hand_activate"):
-				self.visible = false
+				self.hide()
 				can_fire = false
 				pass
 			pass

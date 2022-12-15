@@ -4,16 +4,16 @@ This script controls the player character.
 extends KinematicBody2D
 
 const JUMP_FORCE = 1800			# Force applied on jumping
-const MOVE_SPEED = 800			# Speed to walk with
+const MOVE_SPEED = 1000			# Speed to walk with
 const GRAVITY = 60				# Gravity applied every second
 const MAX_SPEED = 2000			# Maximum speed the player is allowed to move
 const FRICTION_AIR = 0.95		# The friction while airborne
 const FRICTION_GROUND = 0.98 # The friction while on the ground
 const CHAIN_PULL = 105
 
-var velocity = Vector2(0,0)		# The velocity of the player (kept over time)
+var velocity = Vector2(0,0)	# The velocity of the player (kept over time)
 var chain_velocity := Vector2(0,0)
-var can_jump = false			# Whether the player used their air-jump
+var can_jump = false	# Whether the player used their air-jump
 
 
 func _input(event: InputEvent) -> void:
@@ -31,7 +31,7 @@ func _input(event: InputEvent) -> void:
 # This function is called every physics frame
 func _physics_process(_delta: float) -> void:
 	# Walking
-	
+	get_input()
 	var walk = (Input.get_action_strength("player_right") - Input.get_action_strength("player_left")) * MOVE_SPEED
 
 	# Falling
@@ -69,6 +69,7 @@ func _physics_process(_delta: float) -> void:
 	var grounded = is_on_floor()
 	if grounded:
 		velocity.x *= FRICTION_GROUND	# Apply friction only on x (we are not moving on y anyway)
+		velocity.x *= FRICTION_AIR
 		can_jump = true 				# We refresh our air-jump
 		if velocity.y >= 5:		# Keep the y-velocity small such that
 			velocity.y = 5		# gravity doesn't make this number huge
@@ -79,7 +80,7 @@ func _physics_process(_delta: float) -> void:
 	if !grounded:
 		velocity.x *= FRICTION_AIR
 		if velocity.y > 0:
-			velocity.y *= FRICTION_AIR
+			velocity.y *= FRICTION_AIR	
 
 	# Jumping
 	if Input.is_action_just_pressed("player_jump"):
@@ -93,14 +94,14 @@ func _physics_process(_delta: float) -> void:
 
 
 func get_input():
-	velocity.x = 0
 	if Input.is_action_pressed("player_right"):
-		velocity.x += MOVE_SPEED
 		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = false
-	if Input.is_action_pressed("player_left"):
-		velocity.x -= MOVE_SPEED
+	elif Input.is_action_pressed("player_left"):
 		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.play("staying")
 	if velocity.x == 0:
 		$AnimatedSprite.play("staying")
+
