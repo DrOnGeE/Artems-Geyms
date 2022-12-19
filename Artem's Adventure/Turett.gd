@@ -1,5 +1,17 @@
 extends KinematicBody2D
 
+export (int) var gravity = 4000
+export (int) var speed = 200
+export (int) var jump_speed = -1800
+
+var direction = Vector2.RIGHT
+var velocity = Vector2.ZERO
+
+onready var ledgeCheckRight: = $LedgeCheckRight
+onready var ledgeCheckLeft: = $LedgeCheckLeft
+
+
+
 export (int) var detect_radius
 export (float) var fire_rate
 export (PackedScene) var Bullet
@@ -21,10 +33,26 @@ func _physics_process(delta):
 	update()
 	if target:
 		aim()
+		
+	var found_wall = is_on_wall()
+	var found_ledge = not ledgeCheckRight.is_colliding() or not ledgeCheckLeft.is_colliding()
+	
+	if found_wall:
+		velocity.y = jump_speed # now tehy can jump O_o
+		direction *= -1
+	
+	
+	velocity.x = 0
+	velocity.x += speed * direction.x
+	velocity.y += gravity * delta
+	velocity = move_and_slide(velocity, Vector2.UP)
+	
 
 func aim():
 	#CHECK BODY TYPE :/
 	#OR CHANGE LAYER
+	if target.name != "PLAYER":
+		return
 	hit_pos = []
 	var space_state = get_world_2d().direct_space_state
 	var target_extents = target.get_node('CollisionShape2D').shape.extents - Vector2(5, 5)
@@ -53,6 +81,10 @@ func shoot(pos):
 	$ShootTimer.start()
 
 func _draw():
+	if target == null:
+		return
+	if target.name != "PLAYER":
+		return
 	draw_circle(Vector2(), detect_radius, vis_color)
 	if target:
 		print(target)
