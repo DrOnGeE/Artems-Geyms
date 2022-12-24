@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SRC/gun.gd" type="Script" id=1]
-[ext_resource path="res://IMG/sprite_hand_stub.png" type="Texture" id=2]
+[ext_resource path="res://IMG/Enemy/Enemy01/Gun.png" type="Texture" id=2]
 
 [node name="gun" type="Sprite"]
 texture = ExtResource( 2 )

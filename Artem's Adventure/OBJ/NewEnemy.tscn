@@ -1,35 +1,40 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://IMG/sprite_player_move3.png" type="Texture" id=1]
-[ext_resource path="res://IMG/sprite_player_move2.png" type="Texture" id=2]
-[ext_resource path="res://IMG/sprite_player_move1.png" type="Texture" id=3]
+[ext_resource path="res://IMG/Enemy/adventurer-run-00.png" type="Texture" id=1]
+[ext_resource path="res://IMG/Enemy/adventurer-run-01.png" type="Texture" id=2]
+[ext_resource path="res://IMG/Enemy/adventurer-run-03.png" type="Texture" id=3]
 [ext_resource path="res://SRC/Hitbox.gd" type="Script" id=4]
 [ext_resource path="res://SRC/NewEnemy.gd" type="Script" id=5]
+[ext_resource path="res://IMG/Enemy/adventurer-run-02.png" type="Texture" id=6]
+[ext_resource path="res://IMG/Enemy/adventurer-run-04.png" type="Texture" id=7]
+[ext_resource path="res://IMG/Enemy/adventurer-run-05.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 27, 83.5 )
+extents = Vector2( 27, 45.75 )
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 24.0
-height = 126.0
+height = 38.0
 
 [node name="NewEnemy" type="KinematicBody2D"]
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -9, 33 )
+scale = Vector2( 3.12162, 3.12162 )
 frames = SubResource( 1 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1 )
+position = Vector2( 0, 38.75 )
 shape = SubResource( 2 )
 
 [node name="LedgeCheckRight" type="RayCast2D" parent="."]
@@ -47,7 +52,7 @@ position = Vector2( -1, 2 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 1, 0 )
+position = Vector2( 1, 40 )
 shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_Hitbox_body_entered"]

@@ -19,7 +19,7 @@ func _physics_process(delta):
 		velocity.y = jump_speed # now tehy can jump O_o
 		direction *= -1
 	
-	sprite.flip_h = direction.x > 0
+	sprite.flip_h = direction.x < 0
 	$AnimatedSprite.play("default")
 	velocity.x = 0
 	velocity.x += speed * direction.x

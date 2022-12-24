@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TLE/TILESET_BASIC_SET.tres" type="TileSet" id=1]
 [ext_resource path="res://SCN/demo-hook/player_with_hook.tscn" type="PackedScene" id=2]
 [ext_resource path="res://OBJ/EnemyMorshy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://OBJ/Turett.tscn" type="PackedScene" id=4]
+[ext_resource path="res://OBJ/NewEnemy.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,3 +21,6 @@ position = Vector2( 344, 856 )
 
 [node name="Turett" parent="." instance=ExtResource( 4 )]
 position = Vector2( 768, 25 )
+
+[node name="NewEnemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 559, 1063 )
