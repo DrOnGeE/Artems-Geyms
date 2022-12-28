@@ -14,7 +14,13 @@ const CHAIN_PULL = 105
 var velocity = Vector2(0,0)	# The velocity of the player (kept over time)
 var chain_velocity := Vector2(0,0)
 var can_jump = false	# Whether the player used their air-jump
+var health = 100
 
+func ApplyDMG(dmg :int):
+	health -= dmg
+	if health <=0:
+		health = 0
+		get_tree().reload_current_scene()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
