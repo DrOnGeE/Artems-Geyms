@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Artem's Adventure"
-run/main_scene="res://SCN/demo-hook/HOOK_DEMO_SCENE.tscn"
+run/main_scene="res://SCN/demo-navigation/Navigation2dExWorld.tscn"
 
 [display]
 
